@@ -1,0 +1,5 @@
+Hola esto es un archivo de prueba
+Estoy contando el numero de palabras en cada linea
+Aqui hay tres
+Aqui dos
+Una
