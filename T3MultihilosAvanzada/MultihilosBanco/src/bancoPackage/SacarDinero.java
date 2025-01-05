@@ -33,9 +33,11 @@ public class SacarDinero extends Thread {
 	                System.out.println(nombreBeneficiario + " retira " + dineroRetirar + " euros - Saldo actual: " + cuenta.getSaldo() + " euros");
 	            } else if(cuenta.getSaldo()<0){
 	            	System.out.println(nombreBeneficiario + " es deudor/a con " + cuenta.getSaldo() +" no debería estar retirando dinero");
+	            	cuenta.retirarDinero(dineroRetirar);
 	            }
 				else {
-	                System.out.println(nombreBeneficiario + " no puede retirar dinero. No hay saldo; tiene " + cuenta.getSaldo() + " euros.");
+	                System.out.println(nombreBeneficiario + " ha llegado a 0. No hay saldo; tiene " + cuenta.getSaldo() + " euros. Si saca más sera DEUDOR/A");
+	                cuenta.retirarDinero(dineroRetirar);
 	            }
 				try {
 					Thread.sleep(1000); // 1 segundo entre retiradas

@@ -72,17 +72,17 @@ public class Cuenta {
 	 */
 	
 	//A ESTE MÉTODO SINCRONIZADO LO LLAMARÁ LA CLASE SacarDinero.java (donde están los hilos)
+	//ES EL METODO DONDE PODEMOS RESTAR EL SALDO
 	public synchronized void retirarDinero(int cantidad) {
 		
 		// antes de nada, validamos si la cuenta es deudora
 		 if (saldo < 0) {
-	            System.out.println("Cuenta " + idCuenta + " es DEUDORA. Saldo: " + saldo);
-	         //Si que puede sacar dinero;
+	            saldo -= cantidad;
+	            esDeudora=true;
 	        } else if (saldo >= cantidad) {
 	            saldo -= cantidad;
 	         //No hay suficiente saldo pero no es deudora
 	        } else {
-	            System.out.println("No hay suficiente saldo en la cuenta " + idCuenta + ". Saldo actual: " + saldo);
 	        }
 	}
 

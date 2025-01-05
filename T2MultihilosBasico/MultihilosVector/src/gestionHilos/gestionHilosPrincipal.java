@@ -36,8 +36,7 @@ public class gestionHilosPrincipal {
 
 	// Metodo que usamos en hilo 1 y hilo 2 (común) para mostrar el vector
 	
-	//USAMOS syncronized para que hilos no empiezen a imprimir a la vez y sea el print demasiado caótico 
-	protected synchronized static void mostrarVector() {
+	protected static void mostrarVector() {
 		
 		 System.out.println();
 		
